@@ -3,6 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { ArtistService } from './services/artist/artist.service';
+import { Router } from '@angular/router';
+import { EventService } from './services/event/event.service';
+import { ArtistDto } from './models/artistDto';
+import { Artist } from './models/artist';
+import { EventDto } from './models/eventDto';
 
 @Component({
   selector: 'app-root',
@@ -10,47 +16,19 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public selectedIndex = 0;
-  public appPages = [
-    {
-      title: 'Inbox',
-      url: '/folder/Inbox',
-      icon: 'mail'
-    },
-    {
-      title: 'Outbox',
-      url: '/folder/Outbox',
-      icon: 'paper-plane'
-    },
-    {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
-    },
-    {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
-    },
-    {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
-    },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
-    }
-  ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
+  artist : ArtistDto;
+  artiste : Artist;
+  event : EventDto;
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,private router :Router,
+    private eventService : EventService,
+    private artistService :ArtistService
   ) {
     this.initializeApp();
+    this.checkUser();
   }
 
   initializeApp() {
@@ -61,9 +39,33 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
-    if (path !== undefined) {
-      this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
   }
+  checkUser(){
+    if (localStorage.getItem('currentUser') === undefined || localStorage.getItem('currentUser') === null){
+      this.router.navigate(['/login']);
+      return;
+    }
+    this.artist = JSON.parse(localStorage.getItem('currentUser'));
+  }
+
+  addNewEvent(){
+    let idDto = localStorage.getItem('currentUser');
+    this.eventService.findAllArtistEvent(this.artist.id)
+    .subscribe(data => this.artist.id, err => console.log(err));
+    this.router.navigate(['/create-new-event']);
+  }
+  goToHome(){
+    this.router.navigate(['/home']);
+  }
+  profile(id: number){
+    this.router.navigate(['/profile',id]);
+  }
+   logout(){
+   this.artistService.logout()   
+  localStorage.clear();
+  window.location.reload();
+  
+   }
+   
+
 }

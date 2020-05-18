@@ -1,9 +1,68 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+<ion-header >
+  <ion-toolbar  [color]="currentColor">
+      <img src="assets\login-logo.png" alt="..." class="img-rounded" >
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+
+
+
+  <div class="card-body">
+    <div class="text-center">
+      <span class="text-danger">{{errorMessage}}</span>
+      <form  class="form-signin" [formGroup]="loginForm" (ngSubmit)="loginUser()" novalidate>
+        <ion-label for="inputEmail" class="sr-only">Email address</ion-label>
+        <ion-input type="email" id="inputEmail" class="form-control" placeholder="Email address" formControlName="mail" required></ion-input>
+        <ion-label for="inputPassword" class="sr-only">Password</ion-label>
+        <ion-input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password" required></ion-input>
+        <ion-button  type="submit">Sign in</ion-button><br>
+        <a routerLink="/subscribe">Register now</a>
+      </form>      
+    </div>    
+  </div>
+
+
+
+
+<!--Carousel Wrapper-->
+<div class="all">
+<div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
+
+  
+    <div class="carousel-item active">
+      <div class="view">
+        <img class="d-block w-100" src="assets\Illustration-classical-music-composer-composition-blog-history-2009.jpg" alt="First slide">
+      </div>
+       </div>
+
+    <div class="carousel-item">
+   <div class="view">
+        <img class="d-block w-100" src="assets\images.png" alt="Second slide">
+      </div>
+    </div>
+    
+    <div class="carousel-item">
+      <div class="view">
+        <img class="d-block w-100" src="assets\musik-islam.jpg" alt="Third slide">
+      </div>
+  </div>
+           
+  <div class="carousel-item">
+      <div class="view">
+           <img class="d-block w-100" src="assets\SOM_Hero_PianoKeys_CreditDavidAndrews.jpg" alt="Second slide">
+         </div>
+       </div>
+       
+ 
+
+
+
+
+
+</div>
+</div>
 
 </ion-content>

@@ -7,3 +7,34 @@
 <ion-content>
 
 </ion-content>
+<div class="ro">
+  
+  <form class="form-inline d-flex justify-content-center md-form form-sm active-pink active-pink-2 mt-2">
+    <i class="fas fa-search" style="color: #da054cbb;" ></i>
+    <input class="form-control form-control-sm ml-3 w-75" type="serch" placeholder="Search by categories " (input)="filter($event.target.value)"
+      aria-label="Search">
+  </form>
+
+    <div class="card" *ngFor="let ev of evente">
+      <p style="color: darkgray;">#&nbsp;{{ev.idEvent}}</p>
+      
+      <div class="card-header bg-transparent" *ngIf="ev.idOwnerDto === -1">
+          <button type="button" class="btn btn-outline-primary btn-block btn-link"><i class="fas fa-share-alt"></i>&nbsp;Shared</button>
+      </div>
+      <div style="margin-top: 10px;">
+      <img src="http://localhost:8080/v1/photos/artist/{{ev.idArtist}}" class="rounded-circle" width="50" height="50"onerror="this.src='assets/16-168360_user-add-user-icon-add-symbol-member-friend.png'">&nbsp;
+      <b>{{ev.artistName}}&nbsp;{{ev.artistLastName}}</b>
+      </div>
+      <p style="color: grey; font-size: 10px;">published :&nbsp;{{ev.dateOfCreatingDto}}</p>
+      <img src="http://localhost:8080/v1/photos/event/{{ev.idEvent}}" class="card-img-top" style="width:100%; " onerror="this.src='assets/unnamed.png'">
+      <div class="card-body">
+        
+
+        <h5 class="card-text"  [hidden]="!ev.typeEventDto"  >{{ev.typeEventDto}}</h5>
+        <h6 [hidden]="!ev.categoriesDto"><b>categories :</b>&nbsp;{{ev.categoriesDto}}</h6>
+        <p class="card-text" [hidden]="!ev.descriptionDto">{{ev.descriptionDto}}</p>
+        <p class="card-text" [hidden]="!ev.commonDto"><b>Common :</b>&nbsp;{{ev.commonDto}}</p>
+        <p class="card-text" [hidden]="!ev.streetDto"><b>Street :</b>&nbsp;{{ev.streetDto}}</p>
+        <p class="card-text" [hidden]="!ev.zipCodeDto"><b>Zip code :</b>&nbsp;{{ev.zipCodeDto}}</p>
+        <p class="card-text" [hidden]="!ev.phoneDto"><b>Phone :</b>&nbsp;{{ev.phoneDto}}</p>
+        <p class="card-text" [hidden]="!ev.dateDto"><b>At :</b> &nbsp;{{ev.dateDto}}</p>

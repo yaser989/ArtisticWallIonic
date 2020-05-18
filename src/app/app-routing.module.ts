@@ -8,10 +8,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
  
-  {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
+
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
@@ -37,12 +34,16 @@ const routes: Routes = [
     loadChildren: () => import('./subscribe/subscribe.module').then( m => m.SubscribePageModule)
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
   {
-    path: 'update-event',
+    path: 'update-event/:idEvent',
     loadChildren: () => import('./update-event/update-event.module').then( m => m.UpdateEventPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
  
 

@@ -7,3 +7,65 @@
 <ion-content>
 
 </ion-content>
+
+
+<form class="form-group" (ngSubmit)="createNewArtist()"  novalidate>
+  
+  <label for="inputName" class="sr-only">Name</label>
+  <input type="text" name="artistName" class="form-control" [(ngModel)]="artist.artistName" placeholder="Name" required  />
+
+  <label for="inputLAstName" class="sr-only">Last Name</label> 
+  <input type="text" name="artistLastName" class="form-control" [(ngModel)]="artist.artistLastName" placeholder="Last name" required />
+
+  <label for="inputEmail" class="sr-only">Email address</label>
+  <input type="email" name="artistMail" class="form-control" [(ngModel)]="artist.artistMail" placeholder="Email address" required />
+
+  <label for="inputPassword" class="sr-only">Password</label>
+  <input type="password" name="artistPassword" class="form-control" [(ngModel)]="artist.artistPassword" placeholder="Password" required />
+
+  <label for="inputDomain" class="sr-only">Domain</label>
+  <input type="text" name="artistDomain" class="form-control" [(ngModel)]="artist.artistDomain" placeholder="Domain" required />
+  <br>  
+  <button class="btn btn-lg btn-primary btn-block" type="submit" >register</button>
+</form>
+
+
+
+
+<!--Carousel Wrapper-->
+<div class="all">
+<div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
+
+
+<div class="carousel-item active">
+  <div class="view">
+    <img class="d-block w-100" src="assets\Illustration-classical-music-composer-composition-blog-history-2009.jpg" alt="First slide">
+  </div>
+   </div>
+
+<div class="carousel-item">
+<div class="view">
+    <img class="d-block w-100" src="assets\images.png" alt="Second slide">
+  </div>
+</div>
+
+<div class="carousel-item">
+  <div class="view">
+    <img class="d-block w-100" src="assets\musik-islam.jpg" alt="Third slide">
+  </div>
+</div>
+       
+<div class="carousel-item">
+  <div class="view">
+       <img class="d-block w-100" src="assets\SOM_Hero_PianoKeys_CreditDavidAndrews.jpg" alt="Second slide">
+     </div>
+   </div>
+   
+
+
+
+
+
+
+</div>
+</div>
