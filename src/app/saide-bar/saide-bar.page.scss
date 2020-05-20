@@ -1,0 +1,23 @@
+ion-menu ion-content {
+    --background: var(--ion-item-background, var(--ion-background-color, rgb(41, 37, 37)));
+  }
+  
+  #inbox-list{
+    background-color:  rgb(41, 37, 37);
+    margin-left: auto;
+      margin-right: auto;
+  }
+  .navbar-brand{
+    background-color:  rgb(41, 37, 37);
+    width: 100%;
+  }
+  .img-rounded{
+    width: 50%;
+  }
+  .active-item{
+    border-left:8px solid var(--ion-color-primary) ;
+  }
+  .h6{
+    color: whitesmoke;
+    margin-left:1em ;
+}

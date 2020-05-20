@@ -1,0 +1,43 @@
+
+<ion-split-pane contentId="content">
+  <ion-menu contentId="content" type="overlay">
+
+    <a class="navbar-brand" routerLink="/home">
+      <img src="assets\login-logo.png" class="img-rounded">
+    </a>
+    <ion-content>
+      <ion-list id="inbox-list">
+        <div class="h6" (click)="profile(artist.id)"><img src="http://localhost:8080/v1/photos/artist/{{artist.id}}" class="rounded-circle" width="50" height="50" onerror="this.src='assets/16-168360_user-add-user-icon-add-symbol-member-friend.png'" >
+        </div>
+       <h5 style="color:whitesmoke;margin-left:1em ;">{{artist.name}} &nbsp;{{artist.lastName}}</h5> <hr >
+          <li class="nav-item active">
+            <button type="button" class="btn btn-link" (click)="goToHome()" style="color:whitesmoke;"> <li class="breadcrumb-item" aria-current="page"><i class="fas fa-home"></i>&nbsp; Home</li></button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-link" (click)="profile(artist.id)" style="color: white;"> <li class="breadcrumb-item" aria-current="page"><i class="fas fa-user"></i>&nbsp; Profile</li></button>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn btn-link" (click)="addNewEvent()" style="color: white;"> <li class="breadcrumb-item" aria-current="page"><i class="fas fa-plus"></i>&nbsp; Add new Event</li></button>
+          </li>
+         <li class="nav-item">
+          <button routerLink="/audition" type="button" class="btn btn-link"   style="color: white;" ><li class="breadcrumb-item" aria-current="page"><i class="fas fa-star"></i>&nbsp; Audition</li></button>
+          </li>
+          <li class="nav-item">
+            <button routerLink="/concert" type="button" class="btn btn-link"  style="color: white;" ><li class="breadcrumb-item" aria-current="page"><i class="fas fa-star"></i>&nbsp; Concert</li></button>
+            </li>
+            <li class="nav-item">
+              <button routerLink="/show" type="button" class="btn btn-link"  style="color: white;" ><li class="breadcrumb-item" aria-current="page"><i class="fas fa-star"></i>&nbsp; Show</li></button>
+              </li>
+           
+              <li class="nav-item">
+                <button  type="button" class="btn btn-link" (click)="logout()" style="color: white;" ><li class="breadcrumb-item" aria-current="page"><i class="fas fa-sign-out-alt"></i>&nbsp; Logout</li></button>
+               </li>
+        
+      
+      </ion-list> 
+
+     
+   </ion-content>
+  </ion-menu> 
+  <ion-router-outlet id="content"main></ion-router-outlet>
+ </ion-split-pane>

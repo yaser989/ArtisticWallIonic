@@ -13,6 +13,7 @@ export class SubscribePage implements OnInit {
   artist : ArtistDto = new ArtistDto();
   artistForm :FormGroup; 
   errorMessage : string;
+  private currentColor: string
   constructor( private router : Router, private artistService :ArtistService) { }
 
   ngOnInit() {
@@ -23,6 +24,7 @@ export class SubscribePage implements OnInit {
       ArtistPassword : new FormControl ('',Validators.required),
       ArtistDomain : new FormControl ('',Validators.required)
     });
+    this.currentColor = 'dark';
   }
   createNewArtist(){
     this.artistService.createNewArtist(this.artist).subscribe(data => {
