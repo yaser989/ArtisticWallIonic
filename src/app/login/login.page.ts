@@ -16,8 +16,8 @@ export class LoginPage implements OnInit {
 
   constructor(private artistService : ArtistService,private formBuilder: FormBuilder,private router :Router) {
     this.loginForm=new FormGroup({
-      mail : new FormControl ('',Validators.required),
-      password :new FormControl ('',Validators.required)
+      artistMail : new FormControl ('',Validators.required),
+      artistPassword :new FormControl ('',Validators.required)
     });
    }
 
@@ -48,11 +48,11 @@ export class LoginPage implements OnInit {
   }
 
   get userName() {
-    return this.loginForm.get('mail');
+    return this.loginForm.get('artistMail');
   }
 
   get password() {
-    return this.loginForm.get('password');
+    return this.loginForm.get('artistPassword');
   }
      
 }

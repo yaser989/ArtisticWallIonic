@@ -28,8 +28,8 @@ export class ArtistService {
   }
   
   
-  login(mail: string, password: string){
-    return this.http.post<Artist>(AppSitings.App_URL+"/artist/login?mail="+mail+"&password="+password,null)
+  login(artistMail: string, artistPassword: string){
+    return this.http.post<Artist>(AppSitings.App_URL+"/artist/login?artistMail="+artistMail+"&artistPassword="+artistPassword,null)
   }
   
   uploadProductPhoto(file: File, id :number): Observable<HttpEvent<{}>> {

@@ -15,9 +15,9 @@
       <span class="text-danger">{{errorMessage}}</span>
       <form  class="form-signin" [formGroup]="loginForm" (ngSubmit)="loginUser()" novalidate>
         <ion-label for="inputEmail" class="sr-only">Email address</ion-label>
-        <ion-input type="email" id="inputEmail" class="form-control" placeholder="Email address" formControlName="mail" required></ion-input>
+        <ion-input type="email" id="inputEmail" class="form-control" placeholder="Email address" formControlName="artistMail" required></ion-input>
         <ion-label for="inputPassword" class="sr-only">Password</ion-label>
-        <ion-input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password" required></ion-input>
+        <ion-input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="artistPassword" required></ion-input>
         <ion-button  type="submit">Sign in</ion-button><br>
         <a routerLink="/subscribe">Register now</a>
       </form>      
