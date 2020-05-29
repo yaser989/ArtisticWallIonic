@@ -54,5 +54,18 @@ export class ConcertPage implements OnInit {
       this.findEventByCocert();
     });
     window.location.reload();
-    }
+  }
+
+  public  check : boolean ;
+  nameButton : String = "see more..";
+   myClick  ()  { 
+     this.check =! this.check;
+     if (this.check){
+       this.nameButton = "show less";
+     }
+ else{
+   this.nameButton = "see more..";
+ }
+ 
+   }
 }

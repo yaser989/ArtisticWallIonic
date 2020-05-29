@@ -120,4 +120,17 @@ events : Event;
   this.router.navigate(['/update-event',idEvent]);
     }
   
+
+    public  check : boolean ;
+    nameButton : String = "see more..";
+     myClick  ()  { 
+       this.check =! this.check;
+       if (this.check){
+         this.nameButton = "show less";
+       }
+   else{
+     this.nameButton = "see more..";
+   }
+   
+     }
 }
