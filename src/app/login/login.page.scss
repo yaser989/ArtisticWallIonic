@@ -43,3 +43,19 @@ $colors: (
    blue:    #387ef5,
    dark:        rgb(41, 37, 37)   // the dark color we're using
 );
+
+
+.footer h5{
+    float: left;
+    border-bottom: 4px solid rgba(182, 6, 6, 0.795); 
+    padding: 6px 0;
+}
+.footer p{
+    color: white;
+     margin-top: 8%;
+      text-align: left;
+}
+
+.footer{
+    background-color: rgb(41, 37, 37) ;
+}

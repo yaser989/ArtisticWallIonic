@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button> </ion-menu-button>
     </ion-buttons>
-    <ion-title>createNewEvent</ion-title>
+    <ion-title>create new event</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -21,13 +21,13 @@
        <option value="Show"></option>
   </datalist>
   <label for="inputLAstName" class="sr-only">categoriesDto</label> 
-  <input type="text" name="categoriesDto"  class="form-control" [(ngModel)]="event.categoriesDto" placeholder="Categories" required />
+  <input type="text" name="categoriesDto"  class="form-control" [(ngModel)]="event.categoriesDto" placeholder="Category" required />
 
   <label for="inputEmail" class="sr-only">descriptionDto</label>
   <input type="text" name="descriptionDto" class="form-control" [(ngModel)]="event.descriptionDto" placeholder="Description" required />
 
   <label for="inputPassword" class="sr-only">commonDto</label>
-  <input type="text" name="commonDto" class="form-control" [(ngModel)]="event.commonDto" placeholder="Common" required />
+  <input type="text" name="commonDto" class="form-control" [(ngModel)]="event.commonDto" placeholder="City" required />
 
   <label for="inputDomain" class="sr-only">streetDto</label>
   <input type="text" name="streetDto" class="form-control" [(ngModel)]="event.streetDto" placeholder="Street" required />
